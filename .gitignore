@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Данные приложения
+data/
+
+# Конфидициальное
+.env
+
+# Модели
+models/
+*.pt
+*.pth
+*.bin
+*.gguf
+
+# Аудио файлы (генерируются при обработке голосовых сообщений)
+*.ogg
+*.wav
+*.mp3
+
+# IDE
+.vscode/
+.idea/
+
+# Тестовое покрытие
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Логи
+*.log
+logs/
+
+# База данных
+*.db
+*.sqlite3
+
+# Кэш линтеров
+.mypy_cache/
+.ruff_cache/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
