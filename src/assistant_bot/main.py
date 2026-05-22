@@ -12,6 +12,7 @@ from .memory.storage import HistoryStore
 from .pipeline import AssistantPipeline
 from .speech.asr import ASRService
 from .speech.tts import TTSService
+from .speech.tts import TTSService
 
 
 def build_pipeline(settings: AppSettings) -> AssistantPipeline:
@@ -19,7 +20,11 @@ def build_pipeline(settings: AppSettings) -> AssistantPipeline:
         model_size=settings.whisper_model,
         device=settings.whisper_device,
     )
-    tts = TTSService(speaker=settings.tts_speaker)
+    if settings.tts_engine == "edge":
+        from .speech.tts_edge import EdgeTTSService
+        tts = EdgeTTSService(speaker=settings.tts_edge_speaker)
+    else:
+        tts = TTSService(speaker=settings.tts_speaker)
 
     providers = {}
     if settings.gigachat_credentials:
