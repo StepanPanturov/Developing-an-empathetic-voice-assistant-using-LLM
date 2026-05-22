@@ -5,6 +5,7 @@
 **НИУ ВШЭ** | Факультет информатики, математики и компьютерных наук | Программная инженерия
 
 **Студент:** Пантуров Степан Андреевич 
+
 **Научный руководитель:** Савченко Людмила Васильевна, старший научный сотрудник, Лаборатория теоретических основ моделей ИИ
 
 ---
@@ -79,14 +80,14 @@ Maya — Telegram-бот, который умеет определять эмо�
 - Токен Telegram бота ([@BotFather](https://t.me/BotFather))
 - API ключ GigaChat (опционально, [developers.sber.ru](https://developers.sber.ru))
 
-### Шаг 1 — Клонируй репозиторий
+### 1.Клонируйте репозиторий
 
 ```bash
 git clone https://github.com/StepanPanturov/Developing-an-empathetic-voice-assistant-using-LLM.git
 cd Developing-an-empathetic-voice-assistant-using-LLM
 ```
 
-### Шаг 2 — Создай виртуальное окружение
+### 2.Создайте виртуальное окружение
 
 ```bash
 python -m venv .venv
@@ -98,7 +99,7 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### Шаг 3 — Установи зависимости
+### 3.Установите зависимости
 
 ```bash
 pip install fasttext-wheel
@@ -106,7 +107,7 @@ pip install dostoevsky --no-deps
 pip install -e ".[dev]"
 ```
 
-### Шаг 4 — Настрой переменные окружения
+### 4. Настройте переменные окружения
 
 Скопируй `.env.example` в `.env` и заполни:
 
@@ -129,14 +130,14 @@ OLLAMA_HOST=http://localhost:11434
 EMPATHY_ENABLED=true
 ```
 
-### Шаг 5 — Запусти Ollama
+### 5.Запустите Ollama
 
 ```bash
 ollama serve
 ollama pull llama3.1:8b
 ```
 
-### Шаг 6 — Запусти бота
+### 6.Запустите бота
 
 ```bash
 python -m assistant_bot.main
@@ -180,10 +181,10 @@ python demo.py
 Для сравнения режимов с эмпатией и без:
 
 ```dotenv
-# Режим A — с эмпатией (по умолчанию)
+# Режим A (с эмпатией, по умолчанию)
 EMPATHY_ENABLED=true
 
-# Режим B — без эмпатии
+# Режим B (без эмпатии)
 EMPATHY_ENABLED=false
 ```
 
