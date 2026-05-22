@@ -14,6 +14,8 @@ class AppSettings(BaseSettings):
     whisper_model: str = Field(default="small", description="faster-whisper model size")
     whisper_device: str = Field(default="cpu", description="cpu/cuda")
     tts_speaker: str = Field(default="xenia", description="Silero TTS speaker")
+    tts_engine: str = Field(default="edge", description="TTS engine: silero | edge")
+    tts_edge_speaker: str = Field(default="svetlana", description="Edge TTS speaker: svetlana | dmitry | dariya")
 
     # LLM
     default_llm_provider: str = Field(default="gigachat", description="gigachat | yandex | ollama")
@@ -39,6 +41,7 @@ class AppSettings(BaseSettings):
     # Empathy
     default_persona: str = Field(default="supportive", description="Default persona")
     emotion_support_threshold: float = Field(default=0.6, description="Support threshold")
+    empathy_enabled: bool = Field(default=True, description="Enable empathy mode for A/B testing")
 
     # App
     debug: bool = Field(default=False, description="Debug mode")
