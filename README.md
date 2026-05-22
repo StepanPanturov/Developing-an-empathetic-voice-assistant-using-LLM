@@ -219,6 +219,7 @@ src/assistant_bot/
 └── speech/
     ├── asr.py          # STT через faster-whisper
     ├── tts.py          # TTS через Silero
+    |── tts_edge.py     # TTS через Edge (альтернатива)
     └── voice_emotion.py # Анализ интонации (wav2vec2)
 ```
 
